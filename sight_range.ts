@@ -119,7 +119,8 @@ namespace sight {
             if (degreeIn360 <= 180) {
                 y = -y
             }
-            result.drawLine(range, range, range + x, range - y, 2)
+            //result.drawLine(range, range, range + x, range - y, 2)
+            result.drawLine(range, range, range + x, range + y, 2)
         }
         return shader.createImageShaderSprite(result, shader.ShadeLevel.One)
     }
