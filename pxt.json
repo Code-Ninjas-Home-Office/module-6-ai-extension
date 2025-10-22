@@ -4,7 +4,6 @@
     "dependencies": {
         "device": "*",
         "arcade-sprite-util": "github:jwunderl/arcade-sprite-util#v0.4.1",
-        "arcade-shader": "github:riknoll/arcade-shader#d2a2572906fdb68ff429f337e30606b069e688ea",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.2.1"
     },
     "files": [
@@ -14,6 +13,7 @@
         "assets.json",
         "a-star.ts",
         "path-following.ts",
+        "shader.ts",
         "sight.ts",
         "sight_range.ts"
     ],
