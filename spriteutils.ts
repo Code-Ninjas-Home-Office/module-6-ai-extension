@@ -1,7 +1,9 @@
 /**
  * Utility blocks for sprites
  */
-namespace spriteutils {
+
+//% weight=100 color=#0fbc11 icon=""
+namespace AI {
     export enum NullConsts {
         //% block="undefined"
         Undefined,
@@ -197,7 +199,7 @@ namespace spriteutils {
     //% b.shadow=variables_get
     //% b.defl=myEnemy
     //% weight=90
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function distanceBetween(a: Sprite | tiles.Location | Position, b: Sprite | tiles.Location | Position): number {
         if (!a || !b) return 0;
@@ -213,7 +215,7 @@ namespace spriteutils {
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% weight=75
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function heading(sprite: Sprite): number {
         return Math.atan2(sprite.vy, sprite.vx);
@@ -228,7 +230,7 @@ namespace spriteutils {
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% weight=73
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function speed(sprite: Sprite): number {
         return Math.sqrt(sprite.vx * sprite.vx + sprite.vy * sprite.vy);
@@ -253,7 +255,7 @@ namespace spriteutils {
     //% time.defl=100
     //% inlineInputMode=inline
     //% weight=55
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function moveTo(sprite: Sprite, location: Sprite | tiles.Location | Position, time: number, doPause = false) {
         moveToAtSpeed(sprite, location, distanceBetween(sprite, location) / (time / 1000), doPause);
@@ -277,7 +279,7 @@ namespace spriteutils {
     //% location.shadow=spriteutilpos
     //% inlineInputMode=inline
     //% weight=53
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function moveToAtSpeed(sprite: Sprite, location: Sprite | tiles.Location | Position, speed: number, doPause = false) {
         setVelocityAtAngle(sprite, angleFrom(sprite, location), speed);
@@ -329,7 +331,7 @@ namespace spriteutils {
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% weight=85
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function getSpritesWithin(kind: number, distance: number, sprite: Sprite | tiles.Location | Position): Sprite[] {
         let allSprites = sprites.allOfKind(kind);
@@ -357,7 +359,7 @@ namespace spriteutils {
     //% b.shadow=variables_get
     //% b.defl=myEnemy
     //% weight=80
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function angleFrom(a: Sprite | tiles.Location | Position, b: Sprite | tiles.Location | Position): number {
         if (!a || !b) return 0;
@@ -379,7 +381,7 @@ namespace spriteutils {
     //% spriteToMove.shadow=variables_get
     //% spriteToMove.defl=myEnemy
     //% weight=70
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function placeAngleFrom(spriteToMove: Sprite, angleInRadians: number, distance: number, fromSprite: Sprite | tiles.Location | Position) {
         if (!fromSprite || !spriteToMove)
@@ -400,7 +402,7 @@ namespace spriteutils {
     //% target.shadow=variables_get
     //% target.defl=mySprite
     //% weight=60
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function setVelocityAtAngle(target: Sprite, angleInRadians: number, speed: number) {
         if (!target)
@@ -428,7 +430,7 @@ namespace spriteutils {
     //% target.defl=mySprite
     //% interval.shadow=timePicker
     //% interval.defl=500
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     //% weight=4
     export function onSpriteUpdateInterval(target: Sprite, interval: number, callback?: (sprite: Sprite) => void) {
@@ -441,7 +443,7 @@ namespace spriteutils {
     //% kind.shadow=spritekind
     //% interval.shadow=timePicker
     //% interval.defl=500
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     //% weight=9
     export function onSpriteKindUpdateInterval(kind: number, interval: number, callback: (sprite: Sprite) => void) {
@@ -567,7 +569,7 @@ namespace spriteutils {
     //% pixels.max=120
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     //% weight=70
     export function jumpImpulse(sprite: Sprite, pixels: number) {
@@ -579,7 +581,7 @@ namespace spriteutils {
     /**
      * TODO: add help docs
      */
-    export function consts(constType: spriteutils.Consts): number {
+    export function consts(constType: AI.Consts): number {
         switch (constType) {
             case Consts.Undefined: return undefined;
             case Consts.Null: return null;
@@ -597,7 +599,7 @@ namespace spriteutils {
     /**
      * TODO: add help docs
      */
-    export function nullConsts(constType: spriteutils.NullConsts): undefined {
+    export function nullConsts(constType: AI.NullConsts): undefined {
         switch (constType) {
             case NullConsts.Undefined: return undefined;
             case NullConsts.Null: return null;
