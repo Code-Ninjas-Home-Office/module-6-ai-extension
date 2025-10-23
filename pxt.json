@@ -3,7 +3,6 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "arcade-sprite-util": "github:jwunderl/arcade-sprite-util#v0.4.1",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.2.1"
     },
     "files": [
