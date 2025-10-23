@@ -179,7 +179,7 @@ namespace spriteutils {
     //% sprite.shadow=variables_get
     //% sprite.defl=mySprite
     //% weight=100
-    //% category="AI"
+    //% category=AI
     //% group="Sprite Utilities" weight=9
     export function isDestroyed(sprite: Sprite): boolean {
         return !sprite || !!(sprite.flags & sprites.Flag.Destroyed);
@@ -334,11 +334,11 @@ namespace spriteutils {
     export function getSpritesWithin(kind: number, distance: number, sprite: Sprite | tiles.Location | Position): Sprite[] {
         let allSprites = sprites.allOfKind(kind);
         let numItems = 0;
-        let sortArray = allSprites.filter(function(value: Sprite, index: number) {
+        let sortArray = allSprites.filter(function (value: Sprite, index: number) {
             return distanceBetween(value, sprite) <= distance;
         })
 
-        sortArray = sortArray.sort((a, b)=>{
+        sortArray = sortArray.sort((a, b) => {
             return (distanceBetween(a, sprite) - distanceBetween(b, sprite));
         })
 
