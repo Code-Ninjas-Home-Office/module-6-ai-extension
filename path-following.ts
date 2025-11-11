@@ -1,4 +1,4 @@
-//% weight=100 color=#0fbc11 icon=""
+//% weight=100 color=#043da8 icon=""
 namespace AI {
     const PATH_FOLLOW_KEY = "A_STAR_PATH_FOLLOW";
     const PATH_COMPLETION_KEY = "A_STAR_PATH_COMPLETION_HANDLER";
