@@ -13,7 +13,6 @@
         "a-star.ts",
         "path-following.ts",
         "shader.ts",
-        "spriteutils.ts",
         "sight.ts",
         "sight_range.ts"
     ],
